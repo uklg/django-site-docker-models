@@ -1,18 +1,17 @@
 #!/bin/bash
 
-set -e
 
-if [ ! -f /tmp/build-dsd-fw2 ]
-then
-    echo 'no firewall yet'
-    sudo iptables -I INPUT 2 -i lo -p tcp --dport 8000:8999 -j ACCEPT
-    touch /tmp/build-dsd-fw2
+#if [ ! -f /tmp/build-dsd-fw2 ]
+#then
+#    echo 'no firewall yet'
+#    sudo iptables -I INPUT 2 -i lo -p tcp --dport 8000:8999 -j ACCEPT
+#    touch /tmp/build-dsd-fw2
 
-else
+#else
     echo 'firewall in place'
 
 
-fi
+#fi
 
 
 #todo copy a secrets directory and fail if it does not exist (could be param with environment name, staging live etc)
@@ -24,8 +23,29 @@ fi
 
 docker build -t django-site-docker-hcccm .
 
+
+echo takes a while to load up 5 seconds or such
+
+firefox http://127.0.0.1:8002/
+
+
+
+
+docker compose up --build -d
+
+
+
+
+
+docker exec -it django-site-docker-models-web-1 /code/start.sh
+
+# never reaches this bit
+
+
+
+
 echo 'css may take a while to start so wait 5 seconds'
 firefox http://127.0.0.1:8002/
 
-docker-compose up --build
+
 
