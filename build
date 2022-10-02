@@ -1,5 +1,10 @@
 #!/bin/bash
 
+docker stop django-site-docker-models_web
+docker rm django-site-docker-models_web
+
+
+
 
 if [ ! -f /tmp/build-dsd-fw2 ]
 then
