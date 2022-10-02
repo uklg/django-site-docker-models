@@ -21,7 +21,7 @@ fi
 
 
 
-docker build -t django-site-docker-hcccm .
+docker build -t django-site-docker-models .
 
 
 echo takes a while to load up 5 seconds or such
@@ -32,12 +32,15 @@ firefox http://127.0.0.1:8002/
 
 
 docker compose up --build -d
+docker-compose up --build -d
 
 
 
 
 
 docker exec -it django-site-docker-models-web-1 /code/start.sh
+docker exec -it django-site-docker-models_web_1 /code/start.sh
+
 
 # never reaches this bit
 
