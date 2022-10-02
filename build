@@ -47,5 +47,5 @@ docker exec -it django-site-docker-models-web-1 /code/start.sh
 echo 'css may take a while to start so wait 5 seconds'
 firefox http://127.0.0.1:8002/
 
-
+firefox http://127.0.0.1:8002/admin/
 
