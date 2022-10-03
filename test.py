@@ -56,6 +56,7 @@ if not caseless_match('Professional wedding DJ',responselines):
   print('Cannot find string')
   errors +=1
 
+print("This is a test that checks certain http requests are correct")
 print("errors: %s" % errors )
 #print("total errors: %s out of %s" % len(errors))
 
