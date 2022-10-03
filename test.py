@@ -18,6 +18,9 @@ for l in lines:
 print(ACCESSPORT)
 
 
+errors=0
+tests=0
+
 URL="http://127.0.0.1:%s" % ACCESSPORT
 
 print(URL)
@@ -30,7 +33,9 @@ response=urllib.request.urlopen(URL)
 
 code=response.getcode()
 
-if code ==200: print('error code not 200')
+if code !=200:
+  print('error code not 200')
+  errors +=1
 
 
 responselines=response.read()
@@ -43,12 +48,16 @@ def caseless_match(searchstring,contenttosearch):
     return False
 
 
-if caseless_match('nextArrow',responselines):
-  print('yes next')
+if not caseless_match('nextArrow',responselines):
+  print('Cannot find string')
+  errors +=1
 
-if caseless_match('Professional wedding DJ',responselines):
+if not caseless_match('Professional wedding DJ',responselines):
+  print('Cannot find string')
+  errors +=1
 
-  print('yes')
+print("errors: %s" % errors )
+#print("total errors: %s out of %s" % len(errors))
 
 
 
