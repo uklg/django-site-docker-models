@@ -50,5 +50,8 @@ print(responselines[3])
 if 'nextArrow1'.casefold() in str(responselines).casefold():
   print('yes')
 
+if 'Professional wedding DJ'.casefold() in str(responselines).casefold():
+  print('yes')
+
 
 
