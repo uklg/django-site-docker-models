@@ -47,10 +47,18 @@ print(responselines[3])
 #  print(line)
 
 
-if 'nextArrow1'.casefold() in str(responselines).casefold():
-  print('yes')
+def caseless_match(searchstring,contenttosearch):
+  if searchstring.casefold() in str(contenttosearch).casefold():
+    return True
+  else:
+    return False
 
-if 'Professional wedding DJ'.casefold() in str(responselines).casefold():
+
+if caseless_match('nextArrow',responselines):
+  print('yes next')
+
+if caseless_match('Professional wedding DJ',responselines):
+
   print('yes')
 
 
