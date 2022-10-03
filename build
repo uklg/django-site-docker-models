@@ -2,7 +2,7 @@
 
 docker stop models-test
 docker rm models-test
-
+docker rmi $(docker images |grep 'models-test')
 
 
 
@@ -25,8 +25,8 @@ fi
 
 
 
-
-docker build -t django-site-docker-models .
+# this is handled by the compose and was probably useful for populating db initially 
+#docker build -t django-site-docker-models .
 
 
 echo takes a while to load up 5 seconds or such
