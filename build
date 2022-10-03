@@ -1,7 +1,7 @@
 #!/bin/bash
 
-docker stop django-site-docker-models_web
-docker rm django-site-docker-models_web
+docker stop models-test
+docker rm models-test
 
 
 
@@ -43,8 +43,7 @@ docker-compose up --build -d
 
 
 
-docker exec -it django-site-docker-models-web-1 /code/start.sh
-docker exec -it django-site-docker-models_web_1 /code/start.sh
+docker exec -it models-test /code/start.sh
 
 
 # never reaches this bit
