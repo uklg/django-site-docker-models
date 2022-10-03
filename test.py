@@ -30,21 +30,10 @@ response=urllib.request.urlopen(URL)
 
 code=response.getcode()
 
-if code !=200: print('error code not 200')
+if code ==200: print('error code not 200')
 
 
 responselines=response.read()
-
-#for line in responselines:
-#  if 'Professional wedding DJ' in line:
-#    print(line)
-
-
-print(responselines[3])
-
-#for line in responselines:
-  #if 'nextArrow'.casefold() in line.casefold():
-#  print(line)
 
 
 def caseless_match(searchstring,contenttosearch):
