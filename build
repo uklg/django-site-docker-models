@@ -1,8 +1,11 @@
 #!/bin/bash
 
-docker stop models-test
-docker rm models-test
-docker rmi $(docker images |grep 'models-test')
+
+projectname=models-test
+
+docker stop ${projectname}
+docker rm ${projectname}
+docker rmi $(docker images |grep '${projectname}')
 
 
 
@@ -43,7 +46,7 @@ docker-compose up --build -d
 
 
 
-docker exec -it models-test /code/start.sh
+docker exec -it ${projectname} /code/start.sh
 
 
 # never reaches this bit
