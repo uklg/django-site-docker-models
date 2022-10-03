@@ -51,9 +51,12 @@ docker exec -it ${projectname} /code/start.sh
 
 
 echo 'css may take a while to start so wait 5 seconds'
-firefox http://127.0.0.1:${accessport}/
 
-firefox http://127.0.0.1:${accessport}/admin/
+echo these may need their own space for cookies to work:
+
+firefox --private-window http://127.0.0.1:${accessport}/
+
+firefox --private-window http://127.0.0.1:${accessport}/admin/
 
 
 ./test.py
