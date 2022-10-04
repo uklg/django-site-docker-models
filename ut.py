@@ -21,7 +21,20 @@ class Test(unittest.TestCase):
     for i in range(4):
       # initialise a name
       name = 'name'+str(i)
-
+      # store the name into the list variable
+      self.user_name.append(name)
+      # get the user id obtained from this function
+      user_id=self.person.set_name(name)
+      # check if the obtained  user id is null or not
+      self.assertIsNotNone(user_id) # null user id will fail the test
+      # store the user id in the list
+      self.user_id.append(user_id)
+    
+      print("user_id length = ", len(self.user_id))
+      print(self.user_id)
+      print("user_name length = ", len(self.user_name))
+      print(self.user_name)
+      print("\nFinish set_name test\n")
 
 if __name__ == "__main__":
   # begin the unittest.main()
