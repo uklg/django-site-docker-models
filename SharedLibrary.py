@@ -85,11 +85,9 @@ class TestURL:
     if not self.caseless_match('Professional wedding DJ',responselines):
       print('Cannot find string')
       self.errors +=1
+
     self.print_summary()
 
-    print("This is a test that checks certain http requests are correct")
-    print("errors: %s" % self.errors )
-    #print("total errors: %s out of %s" % len(errors))
 
 
 #  if __name__ == '__main__':
