@@ -8,9 +8,9 @@ import urllib.request
 class ParseLine:
 
 
-  def get_accessport(self):
+  def get_accessport(self,filetoparse='build'):
 
-    fd=open('build','r')
+    fd=open(filetoparse,'r')
     lines=fd.readlines()
     fd.close()
 
@@ -96,7 +96,7 @@ class TestURL:
     self.print_summary()
 
 
-  def test_endpoint(self,url,matchstring):
+  def test_endpoint(self,matchstring):
     url=self.get_url(8003)
     responselines =  self.get_response(url)[1]
     responsecode  =  self.get_response(url)[0]
