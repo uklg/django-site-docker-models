@@ -7,14 +7,16 @@ class Person:
     self.name.append(user_name)
     return len(self.name) -1
     # test use case failure use this instead:
-    #return None
+    # return None
 
   def get_name(self, user_id):
     if user_id >=  len(self.name):
       return 'There is no such user'
+
     else:
       return self.name[user_id]
-
+      #return 'some other text to test test failure'
+      
 
 def richtest():
 
