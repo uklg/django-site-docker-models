@@ -52,7 +52,11 @@ class TestURL:
   def check_return_code(self,code):
     if code !=200:
       print('error code not 200')
+      return False
       self.errors +=1
+    else:
+      return True 
+
 
 
 
@@ -70,6 +74,9 @@ class TestURL:
     print("errors: %s" % self.errors )
     #print("total errors: %s out of %s" % len(errors))
 
+   # run the constructor
+   # def __init(self, 
+
 
   def execute(self,port=8003):
 
@@ -86,6 +93,18 @@ class TestURL:
       print('Cannot find string')
       self.errors +=1
 
+    self.print_summary()
+
+
+  def test_endpoint(self,port,matchstring):
+    url=self.get_url(8003)
+    responselines =  self.get_response(url)[1]
+    responsecode  =  self.get_response(url)[0]
+
+    stringmatch = self.caseless_match(matchstring,responselines)
+    codematch   = self.check_return_code(responsecode) 
+    return { 'returncodegood': codematch, 'stringmatchgood':  codematch, 'responsecode': responsecode }
+    
     self.print_summary()
 
 

@@ -45,3 +45,5 @@ turl.print_summary()
 
 #turl.execute()
 
+
+print ( turl.test_endpoint(8003,'nextArrow') )
