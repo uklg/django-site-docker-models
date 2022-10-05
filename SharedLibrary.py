@@ -26,7 +26,7 @@ class ParseLine:
 
 class TestURL:
 
-
+  # This accumalates errors once the class is constructed
   errors=0
   tests=0
 
@@ -103,10 +103,13 @@ class TestURL:
 
     stringmatch = self.caseless_match(matchstring,responselines)
     codematch   = self.check_return_code(responsecode) 
-    return { 'returncodegood': codematch, 'stringmatchgood':  codematch, 'responsecode': responsecode }
+    rdict= { 'returncodegood': codematch, 
+              'stringmatchgood':  stringmatch, 
+              'responsecode': responsecode, 
+              'url': url }
     
     self.print_summary()
-
+    return rdict
 
 
 #  if __name__ == '__main__':
