@@ -37,8 +37,11 @@ print(r1)
 
 # something that should fail
 
-#r2= turl.caseless_match('nextArrownotger',response[1])
-#print(r2)
+r2= turl.caseless_match('nextArrownotger',response[1])
+print(r2)
 
-turl.execute()
+
+turl.print_summary()
+
+#turl.execute()
 

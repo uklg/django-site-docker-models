@@ -61,8 +61,14 @@ class TestURL:
     if searchstring.casefold() in str(contenttosearch).casefold():
       return True
     else:
+      self.errors += 1
       return False
 
+
+  def print_summary(self):
+    print("This is a test that checks certain http requests are correct")
+    print("errors: %s" % self.errors )
+    #print("total errors: %s out of %s" % len(errors))
 
 
   def execute(self,port=8003):
@@ -72,7 +78,6 @@ class TestURL:
     responselines=self.get_response(url)[1]
     
 
-
     if not self.caseless_match('nextArrow',responselines):
       print('Cannot find string')
       self.errors +=1
@@ -80,6 +85,7 @@ class TestURL:
     if not self.caseless_match('Professional wedding DJ',responselines):
       print('Cannot find string')
       self.errors +=1
+    self.print_summary()
 
     print("This is a test that checks certain http requests are correct")
     print("errors: %s" % self.errors )
