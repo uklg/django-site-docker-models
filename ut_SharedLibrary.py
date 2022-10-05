@@ -20,14 +20,20 @@ class Test(unittest.TestCase):
     Any method which starts with ``test_`` will be considered a test case.
     """
 
-    dummydestination='/tmp/testbuild'
-    testport='9300'
-    # make a dummy file for testing:
-    fd=open(dummydestination,'w')
-    fd.write("\n\naccessport=%s\n\n\n\n" % testport) 
-    fd.close()
-    port=self.parseline.get_accessport(dummydestination)
-    self.assertEqual( port, testport)
+    # test different ports
+    for port in range(1,10):
+      dummydestination='/tmp/testbuild'
+      testport=str(port)
+      # make a dummy file for testing:
+      fd=open(dummydestination,'w')
+
+      beginningws="blah\n"*port # add random whitespace for the text file
+
+      # create dummy build file
+      fd.write(beginningws+"\n\naccessport=%s\n\n\n\n" % testport) 
+      fd.close()
+      port=self.parseline.get_accessport(dummydestination)
+      self.assertEqual( port, testport)
 
 
     print("\nFinish ParseLine test\n")
