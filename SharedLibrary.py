@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+# can share this by appending its path to anther app
+
 import urllib.request
 
 
@@ -22,50 +24,69 @@ class ParseLine:
     return(ACCESSPORT)
 
 
-
-"""
-
-errors=0
-tests=0
-
-URL="http://127.0.0.1:%s" % ACCESSPORT
-
-print(URL)
-
-response=urllib.request.urlopen(URL)
+class TestURL:
 
 
-#help(response)
+  errors=0
+  tests=0
 
 
-code=response.getcode()
+  def get_url(self,  port):
 
-if code !=200:
-  print('error code not 200')
-  errors +=1
+    self.URL="http://127.0.0.1:%s" % str(port)
 
-
-responselines=response.read()
+    return self.URL
 
 
-def caseless_match(searchstring,contenttosearch):
-  if searchstring.casefold() in str(contenttosearch).casefold():
-    return True
-  else:
-    return False
+
+  def get_response(self,url):
+
+    response=urllib.request.urlopen(url)
+    #help(response)
+    code=response.getcode()
+    responselines=response.read()
+    return [code,responselines]
 
 
-if not caseless_match('nextArrow',responselines):
-  print('Cannot find string')
-  errors +=1
-
-if not caseless_match('Professional wedding DJ',responselines):
-  print('Cannot find string')
-  errors +=1
-
-print("This is a test that checks certain http requests are correct")
-print("errors: %s" % errors )
-#print("total errors: %s out of %s" % len(errors))
+ 
+  def check_return_code(self,code):
+    if code !=200:
+      print('error code not 200')
+      self.errors +=1
 
 
-"""
+
+
+  def caseless_match(self,searchstring,contenttosearch):
+    if searchstring.casefold() in str(contenttosearch).casefold():
+      return True
+    else:
+      return False
+
+
+
+  def execute(self,port=8003):
+
+    url=self.get_url(8003)
+    print(url)
+    responselines=self.get_response(url)[1]
+    
+
+
+    if not self.caseless_match('nextArrow',responselines):
+      print('Cannot find string')
+      self.errors +=1
+
+    if not self.caseless_match('Professional wedding DJ',responselines):
+      print('Cannot find string')
+      self.errors +=1
+
+    print("This is a test that checks certain http requests are correct")
+    print("errors: %s" % self.errors )
+    #print("total errors: %s out of %s" % len(errors))
+
+
+#  if __name__ == '__main__':
+#    main()
+
+
