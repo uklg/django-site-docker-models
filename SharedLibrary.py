@@ -96,7 +96,7 @@ class TestURL:
     self.print_summary()
 
 
-  def test_endpoint(self,port,matchstring):
+  def test_endpoint(self,url,matchstring):
     url=self.get_url(8003)
     responselines =  self.get_response(url)[1]
     responsecode  =  self.get_response(url)[0]

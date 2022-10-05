@@ -46,4 +46,8 @@ turl.print_summary()
 #turl.execute()
 
 
-print ( turl.test_endpoint(8003,'nextArrow') )
+print ( turl.test_endpoint('8003','nextArrow') )
+
+
+#print ( turl.test_endpoint(url='https://www.google.com','nextArrow34') )
+
