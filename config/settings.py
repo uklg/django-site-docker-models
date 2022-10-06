@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 ]
 
-DEBUG= False
+# Set to TRUE to disable emails, to get error messages and to autorestart on code changes and to turn on debug toolbar:
+DEBUG= True
+#DEBUG= False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
