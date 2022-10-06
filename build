@@ -54,7 +54,7 @@ docker-compose up --build -d
 
 
 
-docker exec -it ${projectname} /code/start.sh
+docker exec -it ${projectname}-web /code/start.sh
 
 echo running test to see if string is present at the newly spun up site:
 curl -L 127.0.0.1:${accessport} | grep "Professional wedding DJ" ;echo exit code: $(echo $?)
