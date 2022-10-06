@@ -1,0 +1,14 @@
+create a skeleton repo  - models could be it
+and then each repo will need a deployment repo for it to work
+
+Code will only be in one place
+
+templates and staticfiles need to be copied over
+
+get the deployemt key working for this
+
+key for ami
+
+use of snippets accessible to all apps
+
+add a manifest so app knows port and name etc and build sheet can use this too
