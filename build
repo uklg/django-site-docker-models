@@ -74,4 +74,4 @@ echo admin may need their own browser space for cookies to work:
 firefox --private-window http://127.0.0.1:${accessport}/admin/
 
 
-docker logs ${projectname}-web 
+docker logs -f ${projectname}-web 
