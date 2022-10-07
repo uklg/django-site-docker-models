@@ -5,6 +5,8 @@ services:
       context: .
       dockerfile: dev.Dockerfile
     container_name: models-web
+    environment:
+      - DEBUG=0
     volumes:
       # uses code directly so the app will restart as the volume is shared with the workspace
       - .:/code

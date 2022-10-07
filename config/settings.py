@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import environ
+env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,9 +44,14 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 ]
 
+
+# set debug mode from environment variables
 # Set to TRUE to disable emails, to get error messages and to autorestart on code changes and to turn on debug toolbar:
-DEBUG= True
-#DEBUG= False
+
+DEBUG = env("DEBUG", default=True)
+
+#DEBUG = True
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
