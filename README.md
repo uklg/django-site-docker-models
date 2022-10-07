@@ -73,3 +73,9 @@ htps://docs.docker.com/compose/environment-variables/
 ./build will build a prod env without dynamic updates of code, sans debug panel
 
 ./build debug will have dynamic updates and debug panel
+
+
+
+param > build > docker-compose > dockerfile > docker environment
+              > firefox
+              > unit test
