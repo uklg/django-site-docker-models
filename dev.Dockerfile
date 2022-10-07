@@ -22,6 +22,8 @@ RUN apt-get install expect -y
 COPY requirements.txt /code
 RUN pip install -r /code/requirements.txt
 
+COPY . /code/
+
 #RUN cp -pr /usr/local/lib/python3.8/site-packages/django/contrib/admin /code/staticfiles/
 #RUN cp -pr /usr/local/lib/python3.8/site-packages/django/contrib/admin /app/staticfiles/
 
@@ -35,7 +37,7 @@ RUN pip install -r /code/requirements.txt
 #RUN /code/manage.py makemigrations
 #RUN /code/manage.py migrate
 #RUN /code/expect
-#RUN /code/manage.py collectstatic
+RUN /code/manage.py collectstatic
 
 EXPOSE 8000
 
