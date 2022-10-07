@@ -28,4 +28,4 @@ if css does not update then remove staticfiles dir from server republish and res
 
 
 
-
+use pip freeze to get a manifest of  versions at run time and apply them to requirements.txt.
