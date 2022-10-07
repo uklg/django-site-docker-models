@@ -47,7 +47,9 @@ fi
 
 export COMPOSE_PROJECT_NAME=${projectname}
 
-docker compose up  --build -d
+# uses Dockerfile in this dir to build image if it does not exist and with --build every time
+
+docker compose up  --build   -d
 docker-compose up --build -d
 
 
