@@ -4,9 +4,9 @@ services:
     build: .
     container_name: models-web
     environment:
-      - DEBUG=0
+      - DEBUG=${DEBUG}
     volumes:
-      - .:/app
+      - .:${VOLUME}
     #command: pip install django==3.1.14|grep pip
      # these commands below do not work
 #    command: cp -r /usr/local/lib/python3.8/site-packages/django/contrib/admin /code/staticfiles/

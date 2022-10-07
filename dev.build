@@ -1,6 +1,28 @@
 #!/bin/bash
 
 
+if [[ -z $1 ]];
+then
+  echo No parameter doing prod build
+  export DEBUG=0
+  export VOLUME=/app
+else
+  echo param doing responsive debug build
+  export DEBUG=1
+  export VOLUME=/code
+fi
+
+
+
+echo $(env|grep DEBUG)
+echo $(env|grep VOLUME)
+
+
+sleep 3
+
+
+
+
 
 projectname=models
 accessport=8003
@@ -49,8 +71,12 @@ export COMPOSE_PROJECT_NAME=${projectname}
 
 # uses Dockerfile in this dir to build image if it does not exist and with --build every time
 
-docker compose -f dev.docker-compose.yml up --build   -d 
-docker-compose -f dev.docker-compose.yml up --build -d
+
+
+# Build is not in use unless the container is deleted as no container means build anyway keep for cleaness:
+
+docker compose up --build   -d 
+docker-compose up --build -d
 
 
 
