@@ -6,6 +6,7 @@ services:
       dockerfile: dev.Dockerfile
     container_name: models-web
     volumes:
+      # uses code directly so the app will restart as the volume is shared with the workspace
       - .:/code
     #command: pip install django==3.1.14|grep pip
      # these commands below do not work
