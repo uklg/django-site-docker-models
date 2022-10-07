@@ -25,10 +25,22 @@ forms error (wrong version of django - fixed now)
 
 if css does not update then remove staticfiles dir from server republish and restart app
 
+this may not work as debug is turned off and static generation needs to happen in none debug mode
 
 
 
-use pip freeze to get a manifest of  versions at run time and apply them to requirements.txt.
 
+env,dynamically loading, mounted volume,  css_works with debug,
+
+debug, yes, /code, true
+prod, no, /app, false
+
+
+ pip freeze to get a manifest of  versions at run time and apply them to requirements.txt.
+
+
+### Dev mode
 
 in dev mode can change the code including config on the fly and it makes process restart.
+
+the css is provided by the static to build which is not populated on 
