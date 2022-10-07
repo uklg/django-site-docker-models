@@ -53,7 +53,8 @@ prod, False, working
 dev, True, working
 prod, dev, working
 
-so only dev non debug is broken and that is ok.
+s
+o only dev non debug is broken and that is ok.
 
 Probably due to the volume being dynamically mounted and this is not OK for dev in non debug
 
@@ -62,3 +63,13 @@ Probably due to the volume being dynamically mounted and this is not OK for dev 
 
 
 
+ use this and doc the git logs to get rest
+https://docs.docker.com/compose/environment-variables/
+
+htps://docs.docker.com/compose/environment-variables/
+
+
+
+./build will build a prod env without dynamic updates of code, sans debug panel
+
+./build debug will have dynamic updates and debug panel
