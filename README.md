@@ -44,3 +44,21 @@ prod, no, /app, false
 in dev mode can change the code including config on the fly and it makes process restart.
 
 the css is provided by the static to build which is not populated on 
+
+env,DEBUG, css (static load working) Ctrl-f5
+
+
+dev, False, not working
+prod, False, working
+dev, True, working
+prod, dev, working
+
+so only dev non debug is broken and that is ok.
+
+
+
+
+
+
+
+
