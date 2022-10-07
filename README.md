@@ -29,3 +29,6 @@ if css does not update then remove staticfiles dir from server republish and res
 
 
 use pip freeze to get a manifest of  versions at run time and apply them to requirements.txt.
+
+
+in dev mode can change the code including config on the fly and it makes process restart.
