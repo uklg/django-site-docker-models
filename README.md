@@ -79,3 +79,17 @@ htps://docs.docker.com/compose/environment-variables/
 param > build > docker-compose > dockerfile > docker environment
               > firefox
               > unit test
+
+ 
+
+./build
+
+
+will build docker env with prod qualities
+
+
+./build debug
+
+will build docker env with debug settings on and debug toolbar and app restarts on code changes
+
+/build rebuild will rebuild database after change
