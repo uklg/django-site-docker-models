@@ -1,5 +1,45 @@
 #!/bin/bash
 
+projectname=models
+accessport=8003
+
+
+
+if [[ -z $1 ]];
+then
+  echo No parameter doing prod build
+  export DEBUG=0
+  export VOLUME=/app
+else
+  if [[ $1 == "debug" ]]
+    then
+
+    echo param doing responsive debug build
+    export DEBUG=1
+    export VOLUME=/code
+  fi
+  if [[ $1 == "rebuild" ]]
+    then
+    echo "This will allow dynamic reloading of code changes (in debug mode only and /code volume must be attached to project root) and db rebuilds"
+    docker exec ${projectname}-web env|grep DEBUG
+    docker inspect  ${projectname}-web|grep -i '"Volumes"' -A1
+    docker exec ${projectname}-web /code/manage.py makemigrations
+    docker exec ${projectname}-web /code/manage.py migrate
+
+    exit
+  fi
+fi
+
+
+
+echo $(env|grep DEBUG)
+echo $(env|grep VOLUME)
+
+
+#sleep 3
+#exit
+
+
 
 
 projectname=models
@@ -49,7 +89,11 @@ export COMPOSE_PROJECT_NAME=${projectname}
 
 # uses Dockerfile in this dir to build image if it does not exist and with --build every time
 
-docker compose up  --build   -d
+
+
+# Build is not in use unless the container is deleted as no container means build anyway keep for cleaness:
+
+docker compose up --build   -d 
 docker-compose up --build -d
 
 
