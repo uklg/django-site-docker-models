@@ -93,3 +93,5 @@ will build docker env with prod qualities
 will build docker env with debug settings on and debug toolbar and app restarts on code changes
 
 /build rebuild will rebuild database after change
+
+the reason the db stays is because it is generated in debug but copied over so need to remove it at start of build
