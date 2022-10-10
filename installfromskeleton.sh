@@ -42,9 +42,10 @@ cp django-site-docker-jmd/pages/templates/* django-site-docker-models/pages/temp
  
 
 
+
 echo $(pwd)
 
-cd 
+cp ~/docker/django-site-docker-models/sendgrid.env django-site-docker-models/  
 
 
 
