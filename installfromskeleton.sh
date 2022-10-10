@@ -49,4 +49,5 @@ cp ~/docker/django-site-docker-models/sendgrid.env django-site-docker-models/
 
 
 
-
+# Todo add this to parametised python script and add to ansible
+  need to test ansible in new env
