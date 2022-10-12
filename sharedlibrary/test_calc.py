@@ -20,5 +20,12 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.division(-1, 1),-1)
         self.assertEqual(calc.division(-2,-2), 1)
         self.assertEqual(calc.division(6, 3), 2)
+    def test_get_list_and_type_is_correct(self):
+        self.assertEqual(type([]),type(calc.getlist()))
+
+    def test_there_are_four_elements_in_the_list(self):
+        self.assertEqual(len(calc.getlist()),4)
+    def test_geturl(self):
+        self.assertEqual(calc.geturl('protocol','url'),'protocol://url')
 if __name__ == '__main__':
    unittest.main()
