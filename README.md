@@ -87,6 +87,9 @@ param > build > docker-compose > dockerfile > docker environment
 
 will build docker env with prod qualities
 
+no dynamic code updates
+no debug toobar.
+
 
 ./build debug
 
@@ -95,3 +98,9 @@ will build docker env with debug settings on and debug toolbar and app restarts 
 /build rebuild will rebuild database after change
 
 the reason the db stays is because it is generated in debug but copied over so need to remove it at start of build
+
+
+## Make a new skeleton repo
+
+
+./installfromskeleton.sh
