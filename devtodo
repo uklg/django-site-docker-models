@@ -1,0 +1,17 @@
+create a multipipleine one file for each
+
+ use a django environment variable to turn debug mode on
+
+have one build script and docker and dockercompose
+
+have a skeleton library
+
+unit test all apps through the build app
+
+
+
+add a task where db is deleted 
+
+add in unit test for css and have a test array through skeleton repo
+
+

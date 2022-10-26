@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from pages.models import Customer, Town
+from pages.models import Customer, Town, Knowledge, Category
 
 class CustomerAdmin(admin.ModelAdmin):
     pass
@@ -17,3 +17,16 @@ class TownAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Town,TownAdmin)
+
+
+class KnowledgeAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Knowledge,KnowledgeAdmin)
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Category,CategoryAdmin)

@@ -29,3 +29,23 @@ add remove db switch in build and maybe a no rebuild option (look at repo)
 https://github.com/morninj/django-docker/blob/master/config.ini.sample
 
 rejig dockerfile to see if it can be quicker frequent changes right at bottom if possible
+
+
+
+variables to set environment:
+https://djangocentral.com/environment-variables-in-django/
+
+https://djangocentral.com/environment-variables-in-django/
+
+dev.build works need to add in dynamically set variable
+
+
+merge  build and dev.build
+      dockercompose and devdockcercompose
+      dockerfile and devdockerfile
+
+set debug from build
+
+check the repo after and document
+
+need to add dynamic removal of db on flag
