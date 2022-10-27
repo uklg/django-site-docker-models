@@ -36,6 +36,10 @@ debug, yes, /code, true
 prod, no, /app, false
 
 
+debug
+roloads code and assets at least when code to them changes to new assets
+
+
  pip freeze to get a manifest of  versions at run time and apply them to requirements.txt.
 
 
